@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: dify-app
+    env: docker
+    region: frankfurt  # hoặc 'oregon', 'singapore' tùy bạn
+    plan: free
+    branch: main
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: PORT
+        value: 80
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_URL
+        value: postgres://username:password@host:port/dbname
+      - key: REDIS_URL
+        value: redis://username:password@host:port
+      - key: OPENAI_API_KEY
+        value: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
